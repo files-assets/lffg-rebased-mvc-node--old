@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  border-top: solid 4px #39c;
+  font-size: 17px;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.5;
+  color: #212121;
+}
+
+button {
+  margin-top: 15px;
+  background-color: #39c;
+  border: none;
+  border-radius: 3px;
+  color: #fff;
+  padding: 10px 16px;
+}

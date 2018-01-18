@@ -1,0 +1,25 @@
+{
+  "name": "mvc-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": {
+    "name": "Luiz Felipe Frazão Gonçalves",
+    "email": "frazaolipe@gmail.com",
+    "url": "https://lffg.github.io"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "consign": "^0.1.6",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "express-validator": "^2.21.0",
+    "mongodb": "^2.2.34"
+  }
+}
