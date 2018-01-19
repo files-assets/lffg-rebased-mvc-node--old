@@ -33,9 +33,9 @@ consign({ cwd: 'app', verbose: true })
 /**
  * If no page is requested.
  */
-app.all('/*', function (req, res) {
-	res.status(404);
-	res.render('404');
+app.all('/*', function (req, res, next) {
+	res.status(404).render('404');
+	next();
 });
 
 /**
