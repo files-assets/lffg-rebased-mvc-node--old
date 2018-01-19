@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const plumber = require('gulp-plumber');
 
 let count = 1;
 
@@ -26,6 +27,7 @@ gulp.task('watch', function () {
 
 gulp.task('sass', function () {
   gulp.src(`./public/.dev/${sass_dir}/index.${sass_dir}`)
+    .pipe(plumber())
     .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(autoprefixer())
     .pipe(gulp.dest('./public/assets/css'))
