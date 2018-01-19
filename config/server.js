@@ -1,5 +1,5 @@
 /**
- * Dependências.
+ * Dependencies.
  *
  * @private
  */
@@ -9,44 +9,37 @@ const validator = require('express-validator');
 const session   = require('express-session');
 
 /**
- * Instanciar a variável `app`.
+ * Creates the app variable.
  */
 let app = express();
 
 /**
- * Setar os cabeçalhos padrão:
+ * Sets the default headers.
  */
 app.use(function (req, res, next) {
-  res.removeHeader('X-Powered-By');
+  res.set('X-Powered-By', 'NodeJS');
   next();
 });
 
 /**
- * Setar a view engine padrão para este projeto (`ejs`)
- * e o caminho padrão para a renderização das views.
+ * Sets the default view engine and path to views.
  */
-app.set('view engine', 'ejs');
+app.set('view engine', 'pug');
 app.set('views', './public/views');
 
 /**
- * Condiguração de middlewares, em ordem:
- *  1. Express Static    (para arquivos estáticos);
- *  2. Body Parser       (para recebimento de dados via requisições);
- *  3. Express Validator (para executar validações);
- *  4. Express Session   (para o gerenciamento de sessões).
+ * Initializes the middlewares.
  */
 app.use('/assets', express.static('./public/assets'));
 app.use(parser.urlencoded({ extended: true }));
 app.use(validator());
 app.use(session({
-	secret: 'ssUS3R1NF0B4S1Css',
+	secret: 'key-Conf-ss',
 	resave: false,
 	saveUninitialized: false
 }));
 
 /**
- * Exportação da variável `app`.
- *
  * @public
  */
 module.exports = app;

@@ -1,12 +1,12 @@
 /**
- * Dependências.
+ * Dependencies.
  *
  * @private
  */
 const mongo = require('mongodb');
 
 /**
- * Configurações da base de dados.
+ * Database config.
  *
  * @private
  */
@@ -19,7 +19,7 @@ const dbConfig = {
 };
 
 /**
- * Inicialização da base de dados.
+ * Initializes the database.
  *
  * @private
  */

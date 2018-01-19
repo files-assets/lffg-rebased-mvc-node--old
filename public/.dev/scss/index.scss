@@ -1,0 +1,81 @@
+$primary: #39c;
+$color: #212121;
+$border: #ddd;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  border-top: solid 4px $primary;
+  font-size: 17px;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.5;
+  color: $color;
+}
+
+h1 {
+  color: $primary;
+  font-size: 35px;
+  margin: 0;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+form {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.alert {
+  color: #ff0000;
+  margin-bottom: 25px;
+
+  &::before {
+    content: "Error";
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    background-color: #ff0000;
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin-right: 5px;
+  }
+}
+
+input {
+  &:not([type="submit"]) {
+    border: solid 1px $border;
+    padding: 10px 12px;
+    font-size: 17px;
+  }
+
+  &[type="submit"] {
+    border: none;
+    padding: 10px 12px;
+    font-size: 17px;
+    color: #fff;
+    background-color: $primary;
+    border: solid 1px $primary;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: 0;
+    border-color: $primary;
+  }
+}

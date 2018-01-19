@@ -1,0 +1,25 @@
+extends templates/primary
+
+block content
+  h1= appName || 'NodeJS & Express'
+  p
+    | Simple example using NodeJS and Express.
+    br
+    | You can
+    |
+    a(href="https://github.com/lffg/mvc-node" target="_blank") fork it on GitHub
+    |.
+  
+  form(method="post")
+    if error
+      p.alert= error
+      
+    input(type="text" name="term" placeholder="Type something.")
+    input(type="submit" value="Send")
+
+  if term
+    p
+      | You've typed:
+      |
+      strong= term
+      |.

@@ -1,25 +1,35 @@
 {
   "name": "mvc-node",
+  "description": "A simple MVC application created on NodeJS and Express.",
+  "repository": "https://github.com/lffg/mvc-node",
+  "license": "MIT",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "concurrently -p \"[{name}]\" -n \"GULP,NODE\" -c \"bgMagenta.bold,bgGreen.bold\" \"npm run gulp\" \"npm run nodemon\"",
+    "nodemon": "nodemon app.js",
+    "gulp": "gulp"
   },
   "author": {
     "name": "Luiz Felipe Frazão Gonçalves",
     "email": "frazaolipe@gmail.com",
     "url": "https://lffg.github.io"
   },
-  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
     "consign": "^0.1.6",
-    "ejs": "^2.5.7",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
     "express-validator": "^2.21.0",
-    "mongodb": "^2.2.34"
+    "mongodb": "^2.2.34",
+    "pug": "^2.0.0-rc.4"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-cli": "^2.0.0",
+    "gulp-sass": "^3.1.0"
   }
 }

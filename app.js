@@ -1,17 +1,24 @@
 /**
- * Dependências.
+ * Dependencies.
  *
  * @private
  */
 const consign = require('consign');
 
 /**
- * Importar a variável `app` da configuração.
+ * Gets the app instance from config.
  */
-let app = require('./config/server');
+global.app = require('./config/server');
 
 /**
- * Autload dos arquivos.
+ * Reqire the variables and global functions.
+ */
+require('./config/ext/variables.js');
+require('./config/ext/global-functions.js');
+
+/**
+ * Imports the files of controllers,
+ * models, routers and others.
  */
 consign({ verbose: true })
 	.include('./config/db.js')
@@ -24,9 +31,18 @@ consign({ cwd: 'app', verbose: true })
 	.into(app);
 
 /**
- * Iniciar o servidor.
+ * If no page is requested.
+ */
+app.all('/*', function (req, res) {
+	res.status(404);
+	res.render('404');
+});
+
+/**
+ * Starts the server,
+ * also defining the default port.
  */
 const port = process.env.PORT || 80;
 app.listen(port, function () {
-	console.log(`Server listening at port ${port}.`);
+	console.log('\x1b[33m', `Server available at port ${port}.`);
 });
